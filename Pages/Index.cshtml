@@ -1,0 +1,63 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<br>
+<div class="text-center">
+    <partial name="_Banner"/>
+    <h1 class="display-4">¡Bienvenidos!</h1>
+    <strong>
+        <p class="text-lg">Transformamos Ideas en Resultados Digitales</p>
+    </strong>
+</div>
+
+<br>
+<div>
+    <p>Somos una <strong>Software Factory</strong>, compuesta por un equipo de profesionales versátiles, listos para poner sus habilidades al servicio de tu proyecto.</p>
+    
+    <p>Nos destacamos por la diversidad y complementariedad de nuestras habilidades. Cada miembro de nuestro equipo aporta una perspectiva única, lo que nos permite abordar proyectos desde diferentes ángulos y encontrar soluciones innovadoras. Nos enorgullece la sinergia que se crea entre expertos en desarrollo de software, diseño, gestión de proyectos y otras disciplinas, lo que nos permite ofrecer soluciones integrales y adaptadas a las necesidades específicas de cada cliente.</p>
+
+    <p>Nuestra filosofía se basa en la transparencia, la colaboración y la excelencia en la ejecución. Creemos en establecer una comunicación abierta y constante con nuestros clientes para entender a fondo sus objetivos y desafíos. A través de un enfoque colaborativo, trabajamos mano a mano con nuestros clientes durante todo el proceso, desde la conceptualización hasta la implementación, garantizando así la entrega de productos y servicios de alta calidad que superan las expectativas.</p>
+
+    <p>En la Software Factory, mantenemos un compromiso constante con la mejora continua. Estamos atentos a las últimas tendencias tecnológicas y metodologías de desarrollo para asegurarnos de que nuestras soluciones estén siempre a la vanguardia. Nos esforzamos por ser no solo un proveedor de servicios, sino un socio estratégico que impulsa el éxito a largo plazo de cada proyecto que abordamos. Con nosotros, no solo obtienes un equipo de profesionales, sino un socio confiable y comprometido con el éxito de tu empresa.</p>
+</div>
+
+<br>
+<div>
+    <ol>
+        @foreach(var item in Model.Servicios)
+        {
+            <li>@item</li>
+        }
+    </ol>
+</div>
+
+<br>
+<div>
+    <h4>@Model.UserName</h4>
+    <h4>@Model.Mail</h4>
+</div>
+
+<br>
+<div>
+    <form>
+    <div class="mb-3">
+        <label asp-for="Mail" class="form-label"></label>
+        <input asp-for="Mail" class="form-control">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="UserName" class="form-label"></label>
+        <input asp-for="UserName" class="form-control">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-chec
+        k-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
