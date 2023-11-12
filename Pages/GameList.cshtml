@@ -6,10 +6,10 @@
 <h2>Lista de Principales Video Juegos</h2>
 
 <ol>
-@foreach(var game in Model.Games)
-{
-    <li>@game.Name</li>
-}
+  @foreach(var game in Model.Games)
+  {
+      <li>@game.Name</li>
+  }
 </ol>
 
 
@@ -24,3 +24,15 @@
   </div>
   <button type="submit" class="btn btn-primary">Agregar</button>
 </form>
+
+<ol>
+  @foreach(var game in Model.Games)
+  {
+    <li>
+      @game.Name
+      <form method="post" asp-page-handler="Delete" asp-route-name="@game.Name">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+    </li>
+  }
+</ol>

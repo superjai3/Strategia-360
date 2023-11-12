@@ -1,3 +1,4 @@
+using System.Diagnostics.Contracts;
 using System.Security.Cryptography.X509Certificates;
 using clase3.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,12 @@ namespace Herramientas_de_programacion.Pages
         {
             var newObject = NewGame;
             GameService.Create(newObject);
+            return RedirectToAction("Get");
+        }
+
+        public IActionResult OnPostDelete(string name)
+        {
+            GameService.Delete(name);
             return RedirectToAction("Get");
         }
     }

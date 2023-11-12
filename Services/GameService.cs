@@ -31,9 +31,13 @@ public static class GameService
         return GameList;
     }
 
-    public static void Delete()
+    public static void Delete(string name)
     {
-
+        var item = GameList.FirstOrDefault (x => x.Name.ToLower() == name.ToLower());
+        if (item != null)
+        {
+         GameList.Remove(item);
+        }
     }
     
     public static void Create(Game newGame)
@@ -43,6 +47,6 @@ public static class GameService
 
     public static void Update()
     {
-
+        
     }
 }
